@@ -8,6 +8,7 @@ const forecast = (location , callback ) => {
         console.log(`${chalk.red(`Coordinates are Invalid or not given\nTry again with Valid ones`)}`)
     }
     else{
+        const time = new Date;
         const url =`https://api.darksky.net/forecast/0ad18f2298d3aa35d3372f41acda4ecd/${location.latitude},${location.longitude}?units=si&lang=en`;
         request({url , json:true} ,(err, {body}) => {
 
@@ -18,7 +19,7 @@ const forecast = (location , callback ) => {
                 callback(`${chalk.yellow(`Error: unable to find location, fix the coordinates`)}` ,undefined);
             }
             else{
-                callback(undefined, `${body.daily.summary} It is currently ${body.currently.temperature} degrees out.There is a ${body.currently.precipProbability + '%'} chance of rain!`);
+                callback(undefined, `(Time: ${time}), ${body.daily.summary} It is currently ${body.currently.temperature} degrees out.There is a ${body.currently.precipProbability + '%'} chance of rain!`);
             }
         })
     }
