@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/weather.png">
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <div class="main-content">
+        {{>header}}
+        <p>Hi {{name}}!
+        Use this app to get the weather in chosen location.</p>
+        <form>
+            <input placeholder="location">
+            <button>Click</button>
+        </form>
+
+        <p id="msg-1"> </p>
+        <p id="msg-2"> </p>
+    </div>
+
+    {{>footer}}
+</body>
+<script src="js/app.js"></script>
+</html>
