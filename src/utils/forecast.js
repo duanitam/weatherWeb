@@ -19,7 +19,8 @@ const forecast = (location , callback ) => {
                 callback(`${chalk.yellow(`Error: unable to find location, fix the coordinates`)}` ,undefined);
             }
             else{
-                callback(undefined, `(Time: ${time}), ${body.daily.summary} It is currently ${body.currently.temperature} degrees out.There is a ${body.currently.precipProbability + '%'} chance of rain!`);
+
+                callback(undefined, `(Time: ${time}), ${body.daily.summary} It is currently ${body.currently.temperature} degrees out.There is a ${body.currently.precipProbability + '%'} chance of rain!. The highest Temp. today will be ${body.daily.data[0].temperatureHigh}`);
             }
         })
     }

@@ -9,7 +9,7 @@ const geocode = (address ,callback) => {
 
             callback(`${chalk.red(`(LOW LEVEL) Error accoured \n`+ error)}`, undefined);
         }
-        else if(undefined === body.features.length|| body.features.length === 0){
+        else if(undefined === body.features|| body.features.length === 0){
             callback(`Error: unable to find location`, undefined);
         }
         else{
