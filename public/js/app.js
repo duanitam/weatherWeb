@@ -3,10 +3,7 @@ const msg2 = document.querySelector('#msg-2');
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 
-
 console.log('Client side Javascript is loaded');
-
-
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();

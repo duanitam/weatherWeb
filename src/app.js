@@ -28,7 +28,7 @@ app.use(express.static(publicPath));
 
 app.get('', (req, res) => {
     console.log(req);
-   res.render('index',{
+   res.render('inde.js',{
        title: 'Weather App',
        name: 'Tamir'
    });
@@ -50,8 +50,6 @@ app.get('/help', (req, res) => {
 });
 
 
-
-
 app.get('/weather', (req, res) => {
 
     const query = req.query;
@@ -65,6 +63,7 @@ app.get('/weather', (req, res) => {
         if(error){
             return res.send({ error });
         }
+
         forecast({longitude, latitude, location}, (error, fdata) => {
             if(error){
                 return res.send({error});
